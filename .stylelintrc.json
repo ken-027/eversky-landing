@@ -1,0 +1,28 @@
+{
+	"extends": ["stylelint-config-standard-scss"],
+	"plugins": ["stylelint-scss"],
+	"rules": {
+		"at-rule-no-unknown": null,
+		"selector-class-pattern": "^([a-z][A-Za-z0-9]*)+$",
+		"scss/at-rule-no-unknown": true,
+		"scss/selector-no-redundant-nesting-selector": true,
+		"unit-allowed-list": [
+			"em",
+			"rem",
+			"s",
+			"%",
+			"vh",
+			"vw",
+			"px",
+			"ms",
+			"dvh",
+			"fr"
+		],
+		"property-no-vendor-prefix": [
+			true,
+			{
+				"severity": "warning"
+			}
+		]
+	}
+}

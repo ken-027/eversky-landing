@@ -1,0 +1,17 @@
+/** @format */
+@use '../variables' as var;
+
+@mixin button {
+	width: fit-content;
+	display: inline-block;
+
+	&[type='button'] {
+		border: 1px solid var.$beige-color;
+		padding: var.$space-2 var.$space-6;
+
+		&:hover {
+			background-color: var.$beige-color;
+			color: var.$darkblue-color;
+		}
+	}
+}

@@ -1,0 +1,74 @@
+/** @format */
+// cSpell:ignore stylelint
+
+@use '../variables' as var;
+@use '../partials/responsive' as res;
+@use '../components/spacing' as spa;
+@use '../components/caption' as cap;
+
+.contact {
+	background-color: var.$lightblue-color;
+	color: var.$text-light-color;
+}
+
+.container {
+	@include spa.padding;
+
+	padding-block: var.$space-8;
+}
+
+.header {
+	@include cap.header;
+
+	border-color: #fcfcfc7b;
+
+	svg {
+		path {
+			fill: var.$text-light-color;
+		}
+	}
+}
+
+.text {
+	@include cap.caption;
+}
+
+.letsTalk {
+	display: inline-flex;
+	align-items: center;
+	gap: var.$space-3;
+
+	svg {
+		path {
+			stroke: var.$text-light-color;
+		}
+	}
+
+	a {
+		font-size: 35px;
+
+		&:hover {
+			color: var.$darkblue-color;
+
+			// TODO: not highlighting
+			+ svg {
+				path {
+					stroke: red;
+				}
+			}
+
+			&::after {
+				border-color: var.$darkblue-color;
+			}
+		}
+
+		/* stylelint-disable-next-line no-descending-specificity */
+		&::after {
+			display: block;
+			transition: var.$transition;
+			margin-top: var.$space-2;
+			content: '';
+			border-bottom: 2px solid var.$text-light-color;
+		}
+	}
+}

@@ -1,0 +1,56 @@
+/** @format */
+
+@use '../variables' as var;
+@use '../partials/responsive' as res;
+@use '../components/spacing' as spa;
+@use '../components/caption' as cap;
+
+footer {
+	p,
+	a {
+		font-weight: 300;
+	}
+}
+
+.footer {
+	background-color: var.$darkblue-color;
+	color: var.$beige-color;
+}
+
+.container {
+	@include spa.padding;
+
+	padding-block: var.$space-14;
+	padding-block-end: var.$space-20;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: var.$space-3;
+	border-bottom: var.$border;
+}
+
+.text {
+	@include cap.caption;
+
+	padding-block-start: var.$space-16;
+}
+
+.links {
+	margin-block: var.$space-10;
+	display: flex;
+	justify-content: space-between;
+}
+
+.linkedinLink {
+	text-decoration: underline;
+}
+
+.contact,
+.bottom {
+	p:first-child {
+		margin-block-end: var.$space-10;
+	}
+}

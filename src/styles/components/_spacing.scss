@@ -1,0 +1,27 @@
+/** @format */
+
+@use '../variables' as var;
+@use '../partials/responsive' as res;
+
+@mixin padding {
+	padding-inline: var.$space-4;
+	padding-block: var.$space-2;
+
+	@include res.tablet {
+		padding-inline: var.$space-6;
+		padding-block: var.$space-6;
+	}
+}
+
+@mixin padding-section {
+	@include padding;
+
+	padding-block: var.$space-8;
+	margin-bottom: var.$space-4;
+}
+
+@mixin container {
+	max-width: var.$desktop;
+	position: relative;
+	margin-inline: auto;
+}

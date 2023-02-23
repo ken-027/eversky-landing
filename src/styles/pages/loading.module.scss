@@ -1,0 +1,76 @@
+/** @format */
+
+@use '../variables' as var;
+@use '../partials/responsive' as res;
+@use '../components/spacing' as spa;
+@use '../components/caption' as cap;
+@use '../animation' as *;
+
+.loadingContainer {
+	position: fixed;
+	background-color: var.$darkblue-color;
+	color: var.$beige-color;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	text-align: center;
+}
+
+.indicator {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var.$space-10;
+
+	> div {
+		svg {
+			transform: scale(2) translateY(-50%);
+			animation: scaling 2s ease-in-out infinite,
+				pulsing 2s ease-in-out infinite;
+		}
+
+		&:nth-child(2) {
+			svg {
+				animation-delay: 0.2s;
+			}
+		}
+
+		&:nth-child(3) {
+			svg {
+				animation-delay: 0.4s;
+			}
+		}
+	}
+}
+
+.text {
+	margin-top: var.$space-4;
+	font-size: 1.3rem;
+	font-family: var.$collier;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var.$space-3;
+}
+
+.circles {
+	display: flex;
+	gap: var.$space-2;
+}
+
+.circle {
+	height: 5px;
+	display: inline-block;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	background-color: var.$beige-color;
+	animation: scale 1s ease-in-out infinite;
+
+	&:nth-child(2) {
+		animation-delay: 0.2s;
+	}
+
+	&:nth-child(3) {
+		animation-delay: 0.4s;
+	}
+}

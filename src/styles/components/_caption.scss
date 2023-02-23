@@ -1,0 +1,39 @@
+/** @format */
+
+@use '../variables' as var;
+@use '../animation' as *;
+
+@mixin caption {
+	font-size: 35px;
+	font-family: var.$collier;
+	padding-block: var.$space-10;
+	font-weight: lighter;
+}
+
+@mixin headline {
+	font-size: 18px;
+	line-height: 1.5;
+	text-transform: uppercase;
+}
+
+@mixin header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 2px solid var.$lightblue-color;
+	padding-bottom: var.$space-2;
+	gap: var.$space-1;
+
+	h3 {
+		@include headline;
+	}
+
+	svg {
+		animation: pulsing 5s ease-in-out infinite;
+
+		path {
+			stroke: transparent;
+			fill: var.$darkblue-color;
+		}
+	}
+}
